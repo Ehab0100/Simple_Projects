@@ -20,9 +20,11 @@ typedef struct
 
 int main()
 {
-    int a,b,c,dis;
+    int a,b,c,dis,stop=1;
     float x1=0,x2=0;
     complex complex_num;
+
+    AGAIN:
 
     /*input the parameter of second order equation */
     printf("Enter the value of a,b and c respectively\n\
@@ -62,6 +64,15 @@ int main()
        printf("There is two distict complex roots: %.3f+%.3fj , %.3f-%.3fj \n\n"
               ,complex_num.real,complex_num.img,complex_num.real,complex_num.img);
     }
+
+    // Exit condition
+        printf("\nDo you want to continue ? \"Yes:0 , No:any other number\" : ");
+        scanf("%d",&stop);
+        printf("\n\n");
+        if(stop==0)
+        {
+            goto AGAIN;
+        }
 
     return 0;
 }
